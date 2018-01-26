@@ -1,7 +1,6 @@
 ---MagnetCard v1
 local component = require("component")
 local buffer = require("doubleBuffering")
-local GUI = require("GUI")
 local image = require("image")
 local event = require("event")
 local sides = require("sides")
