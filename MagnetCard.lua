@@ -10,6 +10,7 @@ local reader = component.os_magreader
 local red = component.redstone
 
 local pass = "PSh8gKCgg0Xn"
+local picturepath = "/MGfiles/"
 
 reader.setEventName("mag_card")
 
@@ -25,12 +26,12 @@ end
 local function drawSuccessful()
     buffer.clear(0x0)
     buffer.semiPixelCircle(160 / 2, 50, 30, 0x61CE61)
-    buffer.image(61, 16, image.load("/home/pikcha2.pic"))
+    buffer.image(61, 16, image.load(picturepath.."check.pic"))
     buffer.draw(true)
 end
 local function drawFail()
     buffer.clear(0x0)
-    buffer.image(61, 16, image.load("/home/cross.pic"))
+    buffer.image(61, 16, image.load(picturepath.."cross.pic"))
     buffer.semiPixelCircle(160 / 2, 50, 30, 0xEE0000)
     buffer.draw(true)
 end
