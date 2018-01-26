@@ -10,39 +10,18 @@ local internet = component.internet
 -- Specify required files for downloading
 local files = {
 	{
-		url = "https://raw.githubusercontent.com/IgorTimofeev/OpenComputers/master/lib/advancedLua.lua",
-		path = "/lib/advancedLua.lua"
+		url = "https://raw.githubusercontent.com/rrrGame/MagnetCard/master/MagnetCard.lua",
+		path = "/MagnetCard.lua"
 	},
 	{
-		url = "https://raw.githubusercontent.com/IgorTimofeev/OpenComputers/master/lib/color.lua",
-		path = "/lib/color.lua"
+		url = https://raw.githubusercontent.com/rrrGame/MagnetCard/master/MGfiles/cross.pic",
+		path = "/MGfiles/cross.pic"
 	},
 	{
-		url = "https://raw.githubusercontent.com/IgorTimofeev/OpenComputers/master/lib/FormatModules/OCIF.lua",
-		path = "/lib/FormatModules/OCIF.lua"
-	},
-	{
-		url = "https://raw.githubusercontent.com/IgorTimofeev/OpenComputers/master/lib/image.lua",
-		path = "/lib/image.lua"
-	},
-	{
-		url = "https://raw.githubusercontent.com/IgorTimofeev/OpenComputers/master/lib/doubleBuffering.lua",
-		path = "/lib/doubleBuffering.lua"
-	},
-	{
-		url = "https://raw.githubusercontent.com/IgorTimofeev/OpenComputers/master/lib/syntax.lua",
-		path = "/lib/syntax.lua"
-	},
-	{
-		url = "https://raw.githubusercontent.com/IgorTimofeev/OpenComputers/master/lib/palette.lua",
-		path = "/lib/palette.lua"
-	},
-	{
-		url = "https://raw.githubusercontent.com/IgorTimofeev/OpenComputers/master/lib/GUI.lua",
-		path = "/lib/GUI.lua"
+		url = "https://raw.githubusercontent.com/rrrGame/MagnetCard/master/MGfiles/check.pic",
+		path = "/MGfiles/check.pic"
 	},
 }
-
 local properties = {
 	-- Comment any coordinate to calculate it automatically (will centerize window on screen by specified axis)
 	-- windowX = 2,
