@@ -1,0 +1,14 @@
+local files = {
+	{
+		url = "https://raw.githubusercontent.com/rrrGame/MagnetCard/master/MagnetCard.lua",
+		path = "/MagnetCard.lua"
+	},
+	{
+		url = https://raw.githubusercontent.com/rrrGame/MagnetCard/master/MGfiles/cross.pic",
+		path = "/MGfiles/cross.pic"
+	},
+	{
+		url = "https://raw.githubusercontent.com/rrrGame/MagnetCard/master/MGfiles/check.pic",
+		path = "/MGfiles/check.pic"
+	},
+}
