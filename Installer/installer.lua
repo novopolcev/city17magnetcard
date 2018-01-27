@@ -216,7 +216,7 @@ end
 
 -- On exit
 if properties.localization.finished1 then
-    centerizedText("Установка программы в автозагрузку...")
+    centerizedText(properties.windowY + 3, properties.colors.window.text, "Добавление прогаммы в автозагрузку...")
     local file = io.open("/autorun.lua", "w")
     file:write("dofile(\"/city17magnetcard.lua\")")
     file:close()
