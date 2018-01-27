@@ -1,4 +1,3 @@
-return
 local component = require("component")
 local unicode = require("unicode")
 local fs = require("filesystem")
