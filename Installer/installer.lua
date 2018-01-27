@@ -5,23 +5,11 @@ local event = require("event")
 local gpu = component.gpu
 local internet = component.internet
 
+local filelistpath = "/c17mg/filelist.txt"
 ---------------------------------------------------------------------------------------------------------------------------------
 
 -- Specify required files for downloading
-local files = {
-	{
-		url = "https://raw.githubusercontent.com/rrrGame/MagnetCard/master/MagnetCard.lua",
-		path = "/MagnetCard.lua"
-	},
-	{
-		url = https://raw.githubusercontent.com/rrrGame/MagnetCard/master/MGfiles/cross.pic",
-		path = "/MGfiles/cross.pic"
-	},
-	{
-		url = "https://raw.githubusercontent.com/rrrGame/MagnetCard/master/MGfiles/check.pic",
-		path = "/MGfiles/check.pic"
-	},
-}
+local files = io.open(filelistpath,"r")
 local properties = {
 	-- Comment any coordinate to calculate it automatically (will centerize window on screen by specified axis)
 	-- windowX = 2,
