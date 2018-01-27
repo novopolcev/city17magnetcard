@@ -51,7 +51,7 @@ local function read()
         event.pull(1.5,"mag_card")
         red.setOutput(config.redstoneSide,0)
         drawWait()
-        inet.request("http://robspec.pe.hu/send.php",signal[4].." открыл дверь в месте "..config.place)
+        inet.request("http://robspec.pe.hu/send.php",signal[3].." открыл дверь в месте "..config.place)
     else
         drawFail()
         inet.request("http://robspec.pe.hu/send.php",signal[3].." воткнул неправильную карту в месте "..config.place)
@@ -59,9 +59,11 @@ local function read()
     end
 end
 local function createConfig()
+    component.gpu.setBackground(0x000000)
+    component.gpu.setBackground(0xFFFFFF)
     print("Добро пожаловать в программу настройки.\n\nВведите пароль для карты")
     pass = text.trim(term.read(_,_,_,"*"))
-    print("Введите сторону в виде цифры, с которой нужно подавать редстоун-сигнал (0-6)")
+    print("Введите сторону в виде цифры, с которой нужно подавать редстоун-сигнал (0-5)\n0 - низ 1 - верх\n2 - зад 3 - перед\n4 - право 5 - лево")
     redstoneSide = tonumber(text.trim(io.read()))
     if not redstoneSide then print("Вы ввели НЕ число.") createConfig() end
     print("Введите место, где стоит замок")
