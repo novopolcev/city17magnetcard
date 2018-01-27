@@ -9,7 +9,8 @@ local filelistpath = "/c17mg/filelist.txt"
 ---------------------------------------------------------------------------------------------------------------------------------
 
 -- Specify required files for downloading
-local files = io.open(filelistpath,"r")
+local file1 = io.open(filelistpath,"r")
+local files = require("serialization").unserialize(file1:read())
 local properties = {
 	-- Comment any coordinate to calculate it automatically (will centerize window on screen by specified axis)
 	-- windowX = 2,
