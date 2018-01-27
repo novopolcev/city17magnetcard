@@ -29,7 +29,7 @@ end
 local function drawSuccessful()
     buffer.clear(0x0)
     buffer.semiPixelCircle(160 / 2, 50, 30, 0x61CE61)
-    buffer.image(61, 16, image.load("/c17mg/check.pic"))
+    buffer.image(61, 16, image.load("/c17mg/cross.pic"))
     buffer.draw(true)
 end
 local function drawFail()
