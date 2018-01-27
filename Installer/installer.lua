@@ -6,6 +6,7 @@ local gpu = component.gpu
 local internet = component.internet
 
 local filelistpath = "/c17mg/filelist.txt"
+require("term").clear()
 ---------------------------------------------------------------------------------------------------------------------------------
 
 -- Specify required files for downloading
@@ -228,7 +229,8 @@ if properties.localization.finished1 then
 
 	while true do
 		local eventType = event.pull()
-		if eventType == "key_down" or eventType == "touch" then
+        if eventType == "key_down" or eventType == "touch" then
+            dofile("/autorun.lua")
 			break
 		end
 	end
