@@ -46,15 +46,15 @@ end
 local function read()
     local signal = {event.pull("mag_card")}
     if signal[4] == config.pass then
-        inet.request("http://robspec.pe.hu/send.php",signal[4].." открыл дверь в месте "..config.place)
         drawSuccessful()
         red.setOutput(config.redstoneSide,15)
         event.pull(1.5,"mag_card")
         red.setOutput(config.redstoneSide,0)
         drawWait()
+        inet.request("http://robspec.pe.hu/send.php",signal[4].." открыл дверь в месте "..config.place)
     else
-        inet.request("http://robspec.pe.hu/send.php",signal[3].." воткнул неправильную карту в месте "..config.place)
         drawFail()
+        inet.request("http://robspec.pe.hu/send.php",signal[3].." воткнул неправильную карту в месте "..config.place)
         event.timer(1.5,drawWait,1)
     end
 end
