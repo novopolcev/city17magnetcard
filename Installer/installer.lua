@@ -29,7 +29,7 @@ local properties = {
 		-- Comment this lines to automatically close installer window
 		finished1 = "Установка успешно завершена.",
         finished2 = "Нажмите любую кнопку чтобы выйти.",
-        autoruninstall = "Идет запись программы в автозагрузку"
+        autoruninstall = "Идет запись программы в автозагрузку",
 	},
 	-- Customize color scheme as you want to
 	colors = {
