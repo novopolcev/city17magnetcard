@@ -22,13 +22,13 @@ local properties = {
 	-- Customize localization as you want to
 	localization = {
 		-- Specify title of your installer
-		title = "GUI framework installer",
+		title = "Установщик city17magnetcard",
 		-- Use <currentProgress>, <totalProgress> and <currentFile> text insertions to automatically display their values
-		currentFile = "Downloading \"<currentFile>\"",
-		totalProgress = "Total progress: <totalProgress>%",
+		currentFile = "Загрузка \"<currentFile>\"",
+		totalProgress = "Прогресс: <totalProgress>%",
 		-- Comment this lines to automatically close installer window
-		finished1 = "GUI framework has been successfully installed",
-		finished2 = "Press any key to quit"
+		finished1 = "Установка успешно завершена.",
+		finished2 = "Нажмите любую кнопку чтобы выйти."
 	},
 	-- Customize color scheme as you want to
 	colors = {
@@ -216,6 +216,10 @@ end
 
 -- On exit
 if properties.localization.finished1 then
+    centerizedText("Установка программы в автозагрузку...")
+    local file = io.open("/autorun.lua", "w")
+    file:write("dofile(\"/city17magnetcard.lua\")")
+    file:close()
 	rectangle(properties.windowX, properties.windowY + 1, properties.windowWidth, properties.windowHeight - 1, properties.colors.window.background)
 	centerizedText(properties.windowY + 3, properties.colors.window.text, properties.localization.finished1)
 	centerizedText(properties.windowY + 4, properties.colors.window.text, properties.localization.finished2)
