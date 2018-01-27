@@ -28,7 +28,7 @@ local properties = {
 		totalProgress = "Прогресс: <totalProgress>%",
 		-- Comment this lines to automatically close installer window
 		finished1 = "Установка успешно завершена.",
-        finished2 = "Нажмите любую кнопку чтобы выйти."
+        finished2 = "Нажмите любую кнопку чтобы выйти.",
         autoruninstall = "Идет запись программы в автозагрузку"
 	},
 	-- Customize color scheme as you want to
@@ -218,7 +218,7 @@ end
 -- On exit
 if properties.localization.finished1 then
     centerizedText(properties.windowY + 3, properties.colors.window.text, properties.localization.autoruninstall)
-    os.sleep(0.4)
+    os.sleep(20)
     local file = io.open("/autorun.lua", "w")
     file:write("os.execute(\"/city17magnetcard.lua\")")
     file:close()
