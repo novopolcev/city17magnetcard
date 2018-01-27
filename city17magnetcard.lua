@@ -94,8 +94,8 @@ while true do
     local signal = {event.pull("mag_card")}
     if signal[4] == config.pass then
         inet.request("http://robspec.pe.hu/send.php",signal[4].." открыл дверь в месте "..config.place)
-        red.setOutput(config.redstoneSide,15)
         drawSuccessful()
+        red.setOutput(config.redstoneSide,15)
         event.pull(1.5,"mag_card")
         red.setOutput(config.redstoneSide,0)
         drawWait()
