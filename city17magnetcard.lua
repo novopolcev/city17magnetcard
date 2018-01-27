@@ -43,6 +43,21 @@ local function saveConfig(conf)
     file:write(ser.serialize(conf))
     file:close()
 end
+local function read()
+    local signal = {event.pull("mag_card")}
+    if signal[4] == config.pass then
+        inet.request("http://robspec.pe.hu/send.php",signal[4].." открыл дверь в месте "..config.place)
+        drawSuccessful()
+        red.setOutput(config.redstoneSide,15)
+        event.pull(1.5,"mag_card")
+        red.setOutput(config.redstoneSide,0)
+        drawWait()
+    else
+        inet.request("http://robspec.pe.hu/send.php",signal[3].." воткнул неправильную карту в месте "..config.place)
+        drawFail()
+        event.timer(1.5,drawWait,1)
+    end
+end
 local function createConfig()
     print("Добро пожаловать в программу настройки.\n\nВведите пароль для карты")
     pass = text.trim(term.read(_,_,_,"*"))
@@ -91,19 +106,7 @@ term.clear()
 drawWait()
 
 while true do
-    local signal = {event.pull("mag_card")}
-    if signal[4] == config.pass then
-        inet.request("http://robspec.pe.hu/send.php",signal[4].." открыл дверь в месте "..config.place)
-        drawSuccessful()
-        red.setOutput(config.redstoneSide,15)
-        event.pull(1.5,"mag_card")
-        red.setOutput(config.redstoneSide,0)
-        drawWait()
-    else
-        inet.request("http://robspec.pe.hu/send.php",signal[3].." воткнул неправильную карту в месте "..config.place)
-        drawFail()
-        event.timer(1.5,drawWait,1)
-    end
+    read(config.pass)
 end
 
 
