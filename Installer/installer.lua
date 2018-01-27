@@ -6,7 +6,6 @@ local gpu = component.gpu
 local internet = component.internet
 
 local filelistpath = "/c17mg/filelist.txt"
-require("term").clear()
 ---------------------------------------------------------------------------------------------------------------------------------
 
 -- Specify required files for downloading
@@ -219,7 +218,7 @@ end
 -- On exit
 if properties.localization.finished1 then
     centerizedText(properties.windowY + 3, properties.colors.window.text, properties.localization.autoruninstall)
-    os.sleep(20)
+    os.sleep(1)
     local file = io.open("/autorun.lua", "w")
     file:write("os.execute(\"/city17magnetcard.lua\")")
     file:close()
