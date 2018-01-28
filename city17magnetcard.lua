@@ -60,7 +60,7 @@ local function read()
 end
 local function createConfig()
     component.gpu.setBackground(0x000000)
-    component.gpu.setBackground(0xFFFFFF)
+    component.gpu.setForeground(0xFFFFFF)
     print("Добро пожаловать в программу настройки.\n\nВведите пароль для карты")
     pass = text.trim(term.read(_,_,_,"*"))
     print("Введите сторону в виде цифры, с которой нужно подавать редстоун-сигнал (0-5)\n0 - низ 1 - верх\n2 - зад 3 - перед\n4 - право 5 - лево")
